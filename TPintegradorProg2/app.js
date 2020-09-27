@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var { connectToDb } = require('./db');
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 //rutas creadas
@@ -52,5 +52,6 @@ app.listen(3000, () => {
   console.log("Listening to port 3000...")
 });
 
+connectToDb();
 
 module.exports = app;
