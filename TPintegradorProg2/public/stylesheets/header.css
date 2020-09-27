@@ -1,5 +1,7 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
 /* FONTS */
 
 
@@ -22,6 +24,7 @@ header nav ul li a:hover{
 }
 .logo{
     margin: 0px;
+    font-family: 'Oswald', sans-serif;
 }
 .logo a{
     font-family: 'Fjalla One', sans-serif;

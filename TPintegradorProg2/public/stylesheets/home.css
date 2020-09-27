@@ -1,3 +1,7 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Raleway:ital,wght@1,300&display=swap');
+/* FONTS */
+
 article.post{
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -62,3 +66,7 @@ article.post div.post-comentarios ul li p{
     margin: 0 5px;
 }
 
+.vermas{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
