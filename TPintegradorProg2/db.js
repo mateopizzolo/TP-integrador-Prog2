@@ -4,7 +4,7 @@ connectToDb = () => {
     var dbConfig = {
         host: "localhost",
         user: "root",
-        password: "root",
+        password: "mateo",
         database: "fakebook",
     }
 
