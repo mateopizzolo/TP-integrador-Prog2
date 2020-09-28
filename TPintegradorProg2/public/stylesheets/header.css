@@ -1,7 +1,7 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Raleway:ital,wght@0,600;1,300&family=Roboto+Slab:wght@600&display=swap');
 /* FONTS */
 
 
@@ -48,4 +48,12 @@ header div.uk-navbar-center ul li:nth-last-child(1){
 }
 header nav form input, header nav form ::placeholder, header nav form span{
     color: white !important;
+}
+.color-primary{
+    background-color:rgb(93.7%, 9.8%, 79%);
+}
+.navbar-titles li a{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }

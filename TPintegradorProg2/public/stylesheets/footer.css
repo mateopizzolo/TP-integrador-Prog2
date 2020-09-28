@@ -11,3 +11,7 @@ footer ul{
 footer ul li{
     margin-top: 0;
 }
+
+.color-primary{
+    background-color:rgb(93.7%, 9.8%, 79%);
+}
