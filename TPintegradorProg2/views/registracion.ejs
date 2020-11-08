@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" href="/stylesheets/registracion.css">
         <link rel="stylesheet" href="/stylesheets/general.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- UiKit -->
     <!-- <link rel="stylesheet" href="css/uikit.min.css">
@@ -38,10 +39,16 @@
                 <form action="">
                     
                     <h2 class="text-create">Crea un usuario</h2>
-                    <input type="text" placeholder="name" id="name" required>
-                    <input type="text" placeholder="email"  required>
-                    <input type="password" placeholder="password" required>
-                    <input type="submit" value="submit">
+
+                    <div class="formCreaUsuario">
+                        <input class="inputCreaUsuario" type="text" placeholder="name" id="name" required>
+                        <input class="inputCreaUsuario" type="text" placeholder="email"  required>
+                        <input class="inputCreaUsuario" type="password" placeholder="password" required>
+                        <input class="inputCreaUsuario" type="date" placeholder="fecha de nacimiento" required> 
+                        <p>Falta pregunta de seguridad</p>
+                    </div>      
+
+                    <input type="submit" class="btn btn-primary btn-lg" value="submit">
 
                 </form>
             </div>

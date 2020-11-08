@@ -6,5 +6,15 @@
     font-family: 'Roboto Slab', serif;  
 
     text-align: center;
+}
 
+.formCreaUsuario {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.inputCreaUsuario {
+    padding: 5px;
+    margin: 5px;
 }

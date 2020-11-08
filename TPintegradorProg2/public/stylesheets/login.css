@@ -1,0 +1,9 @@
+.formLoginUsuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLoginUsuario {
+    padding: 5px;
+    margin: 5px;
+}
