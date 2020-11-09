@@ -3,13 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var { connectToDb } = require('./db');
+//var { connectToDb } = require('./db');
+const db = require('./database/models');
 
 var usersRouter = require('./routes/users');
 
 //rutas creadas
 let homeRouter = require('./routes/home');
 let loginRouter = require('./routes/login');
+let registerRouter = require('./routes/register');
 let detalleUsuarioRouter = require('./routes/detalleUsuario')
 let postsRouter = require('./routes/posts')
 
@@ -31,6 +33,7 @@ app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/usuario', detalleUsuarioRouter);
 app.use('/posts', postsRouter);
+app.use('/register', registerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -36,15 +36,15 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="">
-                    
+                
+                <form action="/register" method="POST">
                     <h2 class="text-create">Crea un usuario</h2>
 
                     <div class="formCreaUsuario">
-                        <input class="inputCreaUsuario" type="text" placeholder="name" id="name" required>
-                        <input class="inputCreaUsuario" type="text" placeholder="email"  required>
-                        <input class="inputCreaUsuario" type="password" placeholder="password" required>
-                        <input class="inputCreaUsuario" type="date" placeholder="fecha de nacimiento" required> 
+                        <input class="inputCreaUsuario" type="text" placeholder="name" name="name" id="name" required>
+                        <input class="inputCreaUsuario" type="text" placeholder="email" name="email" required>
+                        <input class="inputCreaUsuario" type="password" placeholder="password" name="password" required>
+                        <input class="inputCreaUsuario" type="date" placeholder="fecha de nacimiento" name="birthDate" required> 
                         <p>Falta pregunta de seguridad</p>
                     </div>      
 
