@@ -42,6 +42,11 @@ app.use(function(req, res, next){
   return next();
 })
 
+// cookies clase 9 minuto 2:20
+// app.use(function(req, res, next){
+
+// })
+
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', homeRouter);

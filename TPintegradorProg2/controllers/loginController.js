@@ -25,9 +25,11 @@ let loginController = {
             } 
             else if (bcrypt.compareSync(req.body.password, user.password)) {
                 req.session.userLogueado = user
-                // if (req.body.rememberme != undefined) {
-                //     res.cookie('userLogged', user.id, {maxAge: 20 * 1000})
-                // }
+
+                if (req.body.rememberme != undefined) {
+                     res.cookie('userLogged', user.id, {maxAge: 20 * 1000})
+                }
+                
                 return res.redirect('/');
              }
         })
