@@ -4,11 +4,11 @@ const bcrypt = require('bcryptjs');
 
 let registerController = {
     index: function(req, res){
-        //if(req.session.user != undefined) {
-        //    return res.redirect('/')
-        //} else {
+        if(req.session.userLogueado != undefined) {
+            return res.redirect('/')
+        } else {
             return res.render('registracion')
-        //}
+        }
     },
     store: function(req, res) {
         let user = {

@@ -4,12 +4,11 @@ const users = db.User;
 
 let loginController = {
     index: function(req, res){
-        //if(req.session.user != undefined) {
-        //    console.log(req.session.user)
-        //    return res.redirect('/')
-        //} else {
+        if(req.session.userLogueado != undefined) {
+            return res.redirect('/')
+        } else {
             return res.render('login')
-        //}
+        }
     },
     login: function(req, res) {
         //encontrar el email
