@@ -10,20 +10,22 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-flex uk-flex-between uk-flex-middle navbar-titles">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/posts/agregar">Postear</a></li>
+                        <li><a href="/posts">Postear</a></li>
                         <li><a href="/perfil">Perfil</a></li>
                     </ul>
                 </div>
                 <div class="uk-navbar-right">
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
                         <li>
-                            <form action="" class="uk-search uk-search-default">
+                            <form action="/usuario/search" method="GET" class="uk-search uk-search-default">
                                 <span uk-search-icon></span>
-                                <input type="search" class="uk-search-input" placeholder="Buscar...">
+                                <input type="search" name="searchName" class="uk-search-input" placeholder="Buscar...">
                             </form>
                         </li>
                     </ul>
-                         <p class="navbar-titles usuarioLogueado"><%= locals.user.username %></p>
+                    <% if (locals.user) { %> 
+                         <p class="navbar-titles usuarioLogueado"> <%= locals.user.username %></p>
+                    <% } %> 
                 </div>
             </nav>
         </div>

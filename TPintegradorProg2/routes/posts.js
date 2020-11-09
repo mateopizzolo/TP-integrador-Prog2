@@ -3,7 +3,8 @@ let router = express.Router();
 
 let postsControllers = require('../controllers/detallePostsController')
 
-router.get('/agregar', postsControllers.Agregar);
+router.get('/', postsControllers.Index)
+router.post('/agregar', postsControllers.Agregar);
 router.get('/detalle', postsControllers.Detalle);
 
 

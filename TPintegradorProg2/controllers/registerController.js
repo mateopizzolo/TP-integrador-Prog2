@@ -12,7 +12,7 @@ let registerController = {
     },
     store: function(req, res) {
         let user = {
-            name: req.body.name,
+            username: req.body.name,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             birthDate: req.body.birthDate

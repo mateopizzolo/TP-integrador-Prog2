@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
 
-    let posts = sequelize.define("posts", cols, config);
+    let posts = sequelize.define("Post", cols, config);
 
     return posts;
 }

@@ -32,19 +32,26 @@
 
     <%- include('./partials/headerLogueado') %> 
 
+    <% if (locals.user) { %> 
 
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
-                <form action="" class="form-upload">
+                <form action="/posts/agregar" method="POST" class="form-upload">
                     <input type="file" id="addPost" name="addPost"> <br>
-                    <input type="text" id="description" placeholder="Escriba aqui.."> <br>
+                    <input type="text" id="description" name="titulo" placeholder="Escriba aqui.."> <br>
                     <input type="submit" name="submitPost" id="submitPost"> 
                 </form>
 
             </div>
         </div>
     </main>
+
+    <% } else { %> 
+
+        <p>Solo los usuarios logueados pueden navegar</p>
+
+    <% } %> 
     
     <%- include('./partials/footer') %> 
 
