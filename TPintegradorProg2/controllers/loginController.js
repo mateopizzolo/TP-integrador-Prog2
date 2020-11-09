@@ -18,7 +18,7 @@ let loginController = {
         })
         //chequear que la contrasena coincida
         .then( function(user){
-           // console.log(user)
+           // return res.send(user)
             if(user == null) {
                 return res.send("Usuario incorrecto")
             } else if  (bcrypt.compareSync(req.body.password, user.password) == false) {
@@ -26,13 +26,13 @@ let loginController = {
             } 
             else if (bcrypt.compareSync(req.body.password, user.password)) {
                 req.session.userLogueado = user
-                if (req.body.rememberme != undefined) {
-                    res.cookie('userLogged', user.id, {maxAge: 20 * 1000})
-                }
+                // if (req.body.rememberme != undefined) {
+                //     res.cookie('userLogged', user.id, {maxAge: 20 * 1000})
+                // }
                 return res.redirect('/');
              }
-             })
-             .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
     }
 };
 

@@ -57,3 +57,9 @@ header nav form input, header nav form ::placeholder, header nav form span{
     font-family: 'Raleway', sans-serif;
     font-family: 'Roboto Slab', serif;
 }
+
+.usuarioLogueado {
+    color: white;
+    margin: 0px;
+    margin-left: 5px;
+}

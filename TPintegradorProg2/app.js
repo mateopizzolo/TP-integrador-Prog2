@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //var { connectToDb } = require('./db');
 const db = require('./database/models');
+const session = require('express-session');
 
 var usersRouter = require('./routes/users');
 
@@ -26,6 +27,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session (
+  { secret: 'fakebook',
+    resave: false,
+    saveUninitialized: true }
+));
+
+//Info en todas las vistas
+app.use(function(req, res, next){
+  if(req.session.userLogueado != undefined) {
+    //locals deja datos disponibles en todas las vistas
+      res.locals.user = req.session.userLogueado
+  }
+  return next();
+})
 
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);

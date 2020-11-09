@@ -31,6 +31,8 @@
     
     <%- include('./partials/headerLogueado') %> 
 
+    <% if (locals.user) { %> 
+        
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
@@ -308,6 +310,12 @@
         </div>
     </main>
 
+    <% } else { %> 
+
+        <p>Solo los usuarios logueados pueden navegar</p>
+
+    <% } %> 
+    
         <%- include('./partials/footer') %> 
 
 </body>
