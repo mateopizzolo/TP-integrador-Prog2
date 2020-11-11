@@ -28,7 +28,7 @@
 
 <body>
     
-    <% if (response) { %> 
+    <% if (result) { %> 
     <%- include('./partials/headerLogueado') %> 
 
     <main>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="uk-margin-remove"><%= response.username %> </h3>
+                            <h3 class="uk-margin-remove"><%= result.username %> </h3>
                             <a href="" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
                         </div>
                         <div>
@@ -63,12 +63,11 @@
                                 <p class="uk-text-center">Lorem ipsum</p>
                             </a>
                         </div> -->
-                        <% let results = response.posteos %> 
+                        <% let results = result.posteos %> 
                         <% for (let i = 0; i < results.length; i++) {%> 
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
+                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                            <a href="/posts/detalle/<%= results[i].id %> " class="link-detalle">
+                                <img src="/images/<%= results[i].url_de_la_imagen %> " alt="foto de perfil" class="foto-perfil">
                                 <p class="uk-text-center"><%= results[i].titulo  %> </p>
                             </a>
                         </div>

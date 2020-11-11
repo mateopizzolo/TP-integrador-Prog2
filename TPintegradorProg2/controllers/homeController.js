@@ -4,6 +4,7 @@ let homeController = {
     index: function(req, res) {
         db.Post.findAll({
             limit: 10,
+            order: [ ['fecha', 'DESC'] ]
         })
         .then((response) => {
             console.log(response)
@@ -18,12 +19,12 @@ let homeController = {
             include: [
                 {association: 'posteos'}
             ]
-        })
-            .then( function(response){
-                console.log(response)
+                })
+            .then( function(result){
+                console.log(result)
 
-                return res.render('miPerfil', {response})
-             // return res.send(response)
+                return res.render('miPerfil', {result})
+             // return res.send(result)
             })
             .catch(function (error){
                 console.log(error)
