@@ -12,11 +12,9 @@ let postsController = {
             titulo: req.body.titulo,
             fecha: new Date(),
         }
-    //    return res.send(post)
 
         db.Post.create(post)
         return res.redirect('/');
-        //return res.send(req.body)
     },
     Detalle: function(req, res) {
         return res.render('detallePost');

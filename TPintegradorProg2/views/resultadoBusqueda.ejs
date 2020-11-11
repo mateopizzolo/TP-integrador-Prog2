@@ -37,10 +37,13 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                
+                <% if (resultados.length) { %> 
                 <% for(let i  = 0; i < resultados.length; i++){ %> 
                     <li>
                         <a href="/usuario/detalle/<%= resultados[i].id %>"> <%= resultados[i].username %> </a>
                     </li>
+                <% } } else { %> 
+                    <h2>No se encontraron usuarios</h2>
                 <% } %> 
 
             </div>

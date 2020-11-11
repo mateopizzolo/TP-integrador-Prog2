@@ -42,10 +42,19 @@ app.use(function(req, res, next){
   return next();
 })
 
-// cookies clase 9 minuto 2:20
-// app.use(function(req, res, next){
+// cookies 
+app.use(function(req, res, next){
+  if (req.cookies.userLogged != undefined && req.session.user == undefined) {
+    db.User.findByPk(req.cookies.userLogged)
+      .then(function(user){
+        req.session.user = user;
+        return next();
+      })
+      .catch(e => console.log(e))
+  }
 
-// })
+  return next();
+})
 
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);

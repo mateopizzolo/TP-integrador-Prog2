@@ -24,14 +24,22 @@ let usuarioController = {
     show: function(req, res) {
         let primaryKey = req.params.id; 
 
-        db.User.findByPk(primaryKey)
+        //minuto 22:55 de la clase 10
+        db.User.findByPk(primaryKey, {
+            include: [
+                {association: 'posteos'}
+            ]
+        })
         
-            .then( function(resultados){
-                return res.render('detalleusuario', {resultados})
+            .then( function(response){
+                console.log(response)
+
+                return res.render('detalleusuario', {response})
+              //return res.send(response)
             })
             .catch(function (error){
                 console.log(error)
-            })
+             })
     }
 };
 
