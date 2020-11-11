@@ -26,6 +26,16 @@ article.detalle-post .imagen-post{
     font-weight: bolder;
     margin: 0 0 0 8px;
 }
+.comentarios-detalle .info-post h4{
+    font-size: 14px;
+    font-weight: bolder;
+    margin: 0 0 0 8px;
+}
+.comentarios-detalle .info-post h5{
+    font-size: 14px;
+    font-weight: bolder;
+    margin: 0 0 0 8px; 
+}
 .comentarios-detalle .lista-comentarios{
     height: 75%;
     padding-left: 5px;

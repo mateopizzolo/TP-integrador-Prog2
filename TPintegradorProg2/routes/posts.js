@@ -1,11 +1,11 @@
 let express = require('express');
 let router = express.Router();
 
-let postsControllers = require('../controllers/detallePostsController')
+let postsController = require('../controllers/PostsController')
 
-router.get('/', postsControllers.Index)
-router.post('/agregar', postsControllers.Agregar);
-router.get('/detalle', postsControllers.Detalle);
+router.get('/', postsController.Index)
+router.post('/agregar', postsController.Agregar);
+router.get('/detalle/:id', postsController.Detalle);
 
 
 module.exports = router;

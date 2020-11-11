@@ -24,7 +24,6 @@ let usuarioController = {
     show: function(req, res) {
         let primaryKey = req.params.id; 
 
-        //minuto 22:55 de la clase 10
         db.User.findByPk(primaryKey, {
             include: [
                 {association: 'posteos'}

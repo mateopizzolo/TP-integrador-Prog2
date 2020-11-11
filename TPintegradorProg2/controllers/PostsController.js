@@ -17,7 +17,20 @@ let postsController = {
         return res.redirect('/');
     },
     Detalle: function(req, res) {
-        return res.render('detallePost');
+        let primaryKey = req.params.id; 
+
+        db.Post.findByPk(primaryKey, { 
+            include: [ {association: 'posteoUser'} ]
+         })
+            .then( function(response){
+                console.log(response)
+
+                return res.render('detallePost', {response})
+              // return res.send(response)
+            })
+            .catch(function (error){
+                console.log(error)
+             })
     }
 };
 

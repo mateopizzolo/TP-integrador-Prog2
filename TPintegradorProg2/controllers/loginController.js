@@ -27,7 +27,7 @@ let loginController = {
                 req.session.userLogueado = user
 
                 if (req.body.rememberme != undefined) {
-                    res.cookie('userLogged', user.id, {maxAge: 20 * 1000})
+                    res.cookie('userLogged', user.id, {maxAge: 2000000 * 100000000000})
                 }
                 
                 return res.redirect('/');
