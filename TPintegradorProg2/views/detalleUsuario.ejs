@@ -62,7 +62,7 @@
                     <% for(let i = 0; i < result.length; i++) { %>          
 
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="" class="link-detalle">
+                            <a href="/posts/detalle/<%= result[i].id %> " class="link-detalle">
                                 <img src="/images/<%= result[i].url_de_la_imagen %> " alt="foto de perfil" class="foto-perfil">
                                 <p class="uk-text-center"><%= result[i].titulo%></p>
                             </a>
