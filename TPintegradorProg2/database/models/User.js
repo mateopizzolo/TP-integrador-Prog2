@@ -28,12 +28,17 @@ module.exports = (sequelize, DataTypes) => {
 
     let User = sequelize.define("User", cols, config);
 
-    User.associate = function(models) {
+    User.associate = function(models) { 
         User.hasMany(models.Post, {
             as: 'posteos',
             foreignKey: 'usuario_id',
         })
+        User.hasOne(models.fotoPerfil, {
+            as: 'usuarioFoto',
+            foreignKey: 'usuario_id',
+        })
+        }
+
+return User;
     }
 
-    return User;
-}

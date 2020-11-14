@@ -26,7 +26,7 @@ let usuarioController = {
 
         db.User.findByPk(primaryKey, {
             include: [
-                {association: 'posteos'}
+                {association: 'posteos'}, {association: 'usuarioFoto'}
             ]
         })
         

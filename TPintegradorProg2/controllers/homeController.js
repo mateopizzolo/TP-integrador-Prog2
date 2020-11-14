@@ -4,7 +4,8 @@ let homeController = {
     index: function(req, res) {
         db.Post.findAll({
             limit: 10,
-            order: [ ['fecha', 'DESC'] ]
+            order: [ ['fecha', 'DESC'] ],
+          //  include: [ {association: 'postPerfil'}]
         })
         .then((response) => {
             console.log(response)
@@ -17,14 +18,14 @@ let homeController = {
 
         db.User.findByPk(primaryKey, {
             include: [
-                {association: 'posteos'}
+                {association: 'posteos'}, {association: 'usuarioFoto'}
             ]
                 })
             .then( function(result){
                 console.log(result)
 
                 return res.render('miPerfil', {result})
-             // return res.send(result)
+              //return res.send(result)
             })
             .catch(function (error){
                 console.log(error)
@@ -37,12 +38,24 @@ let homeController = {
             .then( function(result){
                 console.log(result)
 
-              //  return res.render('detallePost', {response})
-               return res.send(result)
+              return res.render('editarPerfil', {result})
+              // return res.send(result)
             })
             .catch(function (error){
                 console.log(error)
              })
+    },
+    cambiarFotoPerfil: function(req, res) {
+        let perfilNueva = {
+            foto: req.body.fotoPerfil,
+            usuario_id: req.session.userLogueado.id
+        }
+
+        //db.User.create(perfilNueva)
+        db.fotoPerfil.create(perfilNueva);
+
+        //return res.send(req.body);
+        return res.redirect('/perfil');
     }
 }
 
