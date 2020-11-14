@@ -29,6 +29,20 @@ let homeController = {
             .catch(function (error){
                 console.log(error)
              })    
+    },
+    editarPerfil: function(req, res) {
+        let primaryKey = req.params.id; 
+
+        db.User.findByPk(primaryKey)
+            .then( function(result){
+                console.log(result)
+
+              //  return res.render('detallePost', {response})
+               return res.send(result)
+            })
+            .catch(function (error){
+                console.log(error)
+             })
     }
 }
 
