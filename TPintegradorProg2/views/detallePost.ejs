@@ -148,6 +148,16 @@
                     </article>
                 </section>
             </div>
+            <% if (response.posteoUser.username == locals.user.username) {%>   
+                <div class="botones-editar-borrar">
+                    <form action="/detalle/editar/<%= response.id %>">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="/detalle/borrar/<%= response.id %> ">
+                        <button type="submit">Borrar</button>
+                    </form>
+                </div>
+            <% } %> 
         </div>
     </main>
 

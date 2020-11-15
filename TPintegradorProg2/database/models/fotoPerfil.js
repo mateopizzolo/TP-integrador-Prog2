@@ -22,16 +22,16 @@ let config = {
 
 let fotoPerfil = sequelize.define("fotoPerfil", cols, config);
 
-fotoPerfil.associate = function(models) {
-    fotoPerfil.belongsTo(models.User, {
-        as: 'fotoUser',
-        foreignKey: 'usuario_id',
-    })
+// fotoPerfil.associate = function(models) {
+//     fotoPerfil.hasMany(models.Post, {
+//         as: 'postPerfil',
+//         foreignKey: 'usuario_id',
+//     })
     // fotoPerfil.hasMany(models.Post, {
     //     as: 'nidea',
     //     foreignKey: 'usuario_id'
     // })
-    }
+    
 
     return fotoPerfil;
 }

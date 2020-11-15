@@ -31,6 +31,21 @@ let postsController = {
             .catch(function (error){
                 console.log(error)
              })
+    },
+    Editar: function(req, res) {
+        return res.render('editarPost')
+    },
+    Editar2: function(req, res){
+
+    },
+    Borrar: function (req, res) {
+        let idBorrar = req.params.id;
+        db.Post.destroy({
+            where: {
+                id: idBorrar
+            }
+        })
+    return res.redirect('/')
     }
 };
 

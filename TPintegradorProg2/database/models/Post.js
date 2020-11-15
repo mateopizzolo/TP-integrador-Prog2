@@ -37,12 +37,11 @@ module.exports = (sequelize, DataTypes) => {
             as: 'posteoUser',
             foreignKey: 'usuario_id',
         })
-        // posts.hasOne(models.fotoPerfil, {
+        // posts.belongsTo(models.fotoPerfil, {
         //     as: "postPerfil",
-        //     // through: "post_perfil",
+        //     through: "fotoPerfil",
         //     foreignKey: "usuario_id",
         //     // otherKey: "",
-        //     // timestamps: false
         // })
 
       // posts.belongsToMany(models.Comentarios, {

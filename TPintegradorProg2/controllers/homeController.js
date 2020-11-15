@@ -5,13 +5,16 @@ let homeController = {
         db.Post.findAll({
             limit: 10,
             order: [ ['fecha', 'DESC'] ],
-          //  include: [ {association: 'postPerfil'}]
+        //    include: [ {association: 'postPerfil'}]
         })
         .then((response) => {
             console.log(response)
             return res.render('home', {response});
             //return res.send(response)
         })
+        .catch(function (error){
+            console.log(error)
+        }) 
     },
     perfil: function(req, res) {
         let primaryKey =  req.session.userLogueado.id; 

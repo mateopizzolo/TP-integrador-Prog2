@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head  >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeBook</title>
+    <link rel="icon"
+        href="https://w7.pngwing.com/pngs/624/811/png-transparent-computer-icons-facebook-social-media-f-logo-cross-brand.png"
+        type="image/x-icon">
+
+    <link rel="stylesheet" href="/stylesheets/agregarPost.css">
+    <link rel="stylesheet" href="/stylesheets/general.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- UiKit -->
+    <!-- <link rel="stylesheet" href="css/uikit.min.css">
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/uikit.min.js"></script> -->
+    <!-- UiKit -->
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+
+
+    <%- include('./partials/headerLogueado') %> 
+
+    <% if (locals.user) { %> 
+
+    <main>
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <form action="/posts/agregar" method="POST" class="form-upload">
+                    <input type="file" id="addPost" name="addPost"> <br>
+                    <input type="text" id="description" name="titulo" placeholder="Escriba aqui.."> <br>
+                    <input type="submit" name="submitPost" id="submitPost"> 
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <% } else { %> 
+
+        <p>Solo los usuarios logueados pueden navegar</p>
+
+    <% } %> 
+    
+    <%- include('./partials/footer') %> 
+
+
+</body>
+
+</html>
