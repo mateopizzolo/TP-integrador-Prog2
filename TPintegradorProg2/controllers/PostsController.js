@@ -33,10 +33,7 @@ let postsController = {
              })
     },
     Editar: function(req, res) {
-        return res.render('editarPost')
-    },
-    Editar2: function(req, res){
-
+        return res.send('les pibis')
     },
     Borrar: function (req, res) {
         let idBorrar = req.params.id;

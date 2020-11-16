@@ -150,9 +150,9 @@
             </div>
             <% if (response.posteoUser.username == locals.user.username) {%>   
                 <div class="botones-editar-borrar">
-                    <form action="/detalle/editar/<%= response.id %>">
+                    <a href="/posts/detalle/editar/<%= response.id %>">
                         <button type="submit">Editar</button>
-                    </form>
+                    </a>
                     <form action="/detalle/borrar/<%= response.id %> ">
                         <button type="submit">Borrar</button>
                     </form>
