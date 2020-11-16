@@ -33,7 +33,29 @@ let postsController = {
              })
     },
     Editar: function(req, res) {
-        return res.send('les pibis')
+        let editar = req.params.id
+
+        db.Post.findByPk(editar)
+            .then(function(post){
+                return res.render('editarPost', {post})
+                //return res.send(post)
+            })
+            .catch(function (error){
+                console.log(error)
+            })
+    },
+    Update: function(req, res) {
+        db.Post.update({
+            titulo: req.body.title,
+            url_de_la_imagen: req.body.changePost
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+       return res.redirect('/perfil')
+       // return res.send(req.body)
     },
     Borrar: function (req, res) {
         let idBorrar = req.params.id;

@@ -37,10 +37,10 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
-                <form action="/posts/agregar" method="POST" class="form-upload">
-                    <input type="file" id="addPost" name="addPost"> <br>
-                    <input type="text" id="description" name="titulo" placeholder="Escriba aqui.."> <br>
-                    <input type="submit" name="submitPost" id="submitPost"> 
+                <form action="/posts/detalle/editar/<%= post.id %> " method="POST" class="form-upload">
+                    <input type="file" id="changePost" value="<%= post.url_de_la_imagen %> " name="changePost"> <br>
+                    <input type="text" id="description" value="<%= post.titulo %> " name="title" placeholder="Descripcion"> <br>
+                    <button type="submit">Editar posteo</button> 
                 </form>
 
             </div>
