@@ -2,19 +2,23 @@ const db = require('../database/models')
 
 let homeController = {
     index: function(req, res) {
-        db.Post.findAll({
+        let pedidoPost = db.Post.findAll({
             limit: 10,
             order: [ ['fecha', 'DESC'] ],
         //    include: [ {association: 'postPerfil'}]
         })
-        .then((response) => {
-            console.log(response)
-            return res.render('home', {response});
-            //return res.send(response)
+        let pedidoFotoPerfil = db.fotoPerfil.findAll({
+
         })
-        .catch(function (error){
-            console.log(error)
-        }) 
+        Promise.all([pedidoPost, pedidoFotoPerfil])
+            .then(
+                function([posteos, fotoPerfil]){
+                return res.render('home', {posteos:posteos, fotoPerfil:fotoPerfil});
+                //return res.send({posteos:posteos, fotoPerfil:fotoPerfil});
+            })
+            .catch(function (error){
+                console.log(error)
+            }) 
     },
     perfil: function(req, res) {
         let primaryKey =  req.session.userLogueado.id; 
