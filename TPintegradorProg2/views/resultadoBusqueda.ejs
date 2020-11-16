@@ -37,15 +37,29 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                
-                <% if (resultados.length) { %> 
-                <% for(let i  = 0; i < resultados.length; i++){ %> 
+                <div class="listadoUsuario">
+                <% if (usuarios.length) { %> 
+                    <h1> Listado de usuarios </h1>
+                    
+                <% for(let i  = 0; i < usuarios.length; i++){ %> 
                     <li>
-                        <a href="/usuario/detalle/<%= resultados[i].id %>"> <%= resultados[i].username %> </a>
+                        <a href="/usuario/detalle/<%= usuarios[i].id %>"> <%= usuarios[i].username %> </a>
                     </li>
                 <% } } else { %> 
                     <h2>No se encontraron usuarios</h2>
                 <% } %> 
-
+                </div>
+                <div class="listadoPosteo">
+                <% if (posteos.length) { %> 
+                    <h1> Listado de posteos </h1>
+                <% for(let i  = 0; i < posteos.length; i++){ %> 
+                    <li>
+                        <a href="posts/detalle/<%= posteos[i].id %>"> <%= posteos[i].titulo %> </a>
+                    </li>
+                <% } } else { %> 
+                    <h2>No se encontraron posteos</h2>
+                <% } %> 
+                </div>
             </div>
         </div>
     </main>

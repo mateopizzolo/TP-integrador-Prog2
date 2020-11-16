@@ -8,14 +8,21 @@ let usuarioController = {
     },
     search: function(req, res) {
         const search = req.query.searchName;
-        db.User.findAll({
+        let pedidoUser = db.User.findAll({
             where: [
                 {username: { [op.like] : "%" + search + "%" }}
             ]
         })
+        let pedidoPost = db.Post.findAll({
+            where: [
+                {titulo: { [op.like] : "%" + search + "%" }}
+            ]
+        })
+        Promise.all([pedidoUser, pedidoPost])
             .then(
-                function(resultados){
-                    return res.render('resultadoBusqueda', {resultados})
+                function([usuarios, posteos]){
+                    return res.render('resultadoBusqueda', {usuarios:usuarios, posteos:posteos})
+                    //return res.send({usuarios:usuarios, posteos:posteos})
             })
             .catch(function(error) {
                 console.log(error)
