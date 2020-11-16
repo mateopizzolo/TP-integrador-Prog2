@@ -8,7 +8,7 @@ router.post('/agregar', postsController.Agregar);
 router.get('/detalle/:id', postsController.Detalle);
 router.get('/detalle/editar/:id', postsController.Editar);
 router.post('/detalle/editar/:id', postsController.Update);
-router.get('/detalle/borrar/:id', postsController.Borrar);
+router.post('/borrar/:id', postsController.Borrar);
 
 
 module.exports = router;

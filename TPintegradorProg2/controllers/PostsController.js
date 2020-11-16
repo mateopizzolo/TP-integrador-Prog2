@@ -58,10 +58,9 @@ let postsController = {
        // return res.send(req.body)
     },
     Borrar: function (req, res) {
-        let idBorrar = req.params.id;
         db.Post.destroy({
             where: {
-                id: idBorrar
+                id: req.params.id
             }
         })
     return res.redirect('/')
