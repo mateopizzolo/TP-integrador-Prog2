@@ -6,28 +6,28 @@ let usuarioController = {
     index: function(req, res) {
         return res.render('detalleUsuario');
     },
-    search: function(req, res) {
-        const search = req.query.searchName;
-        let pedidoUser = db.User.findAll({
-            where: [
-                {username: { [op.like] : "%" + search + "%" }}
-            ]
-        })
-        let pedidoPost = db.Post.findAll({
-            where: [
-                {titulo: { [op.like] : "%" + search + "%" }}
-            ]
-        })
-        Promise.all([pedidoUser, pedidoPost])
-            .then(
-                function([usuarios, posteos]){
-                    return res.render('resultadoBusqueda', {usuarios:usuarios, posteos:posteos})
-                    //return res.send({usuarios:usuarios, posteos:posteos})
-            })
-            .catch(function(error) {
-                console.log(error)
-            }) 
-    },
+    // search: function(req, res) {
+    //     const search = req.query.searchName;
+    //     let pedidoUser = db.User.findAll({
+    //         where: [
+    //             {username: { [op.like] : "%" + search + "%" }}
+    //         ]
+    //     })
+    //     let pedidoPost = db.Post.findAll({
+    //         where: [
+    //             {titulo: { [op.like] : "%" + search + "%" }}
+    //         ]
+    //     })
+    //     Promise.all([pedidoUser, pedidoPost])
+    //         .then(
+    //             function([usuarios, posteos]){
+    //                 return res.render('resultadoBusqueda', {usuarios:usuarios, posteos:posteos})
+    //                 //return res.send({usuarios:usuarios, posteos:posteos})
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error)
+    //         }) 
+    // },
     show: function(req, res) {
         let primaryKey = req.params.id; 
 
